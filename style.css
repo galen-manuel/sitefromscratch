@@ -1,0 +1,133 @@
+body
+{
+    background-color: #eee;
+    color: #333;
+}
+a
+{
+    text-decoration: none;
+    color: dodgerblue;
+}
+a:hover
+{
+    text-decoration: underline;
+    color: darkblue;
+}
+img
+{
+    /* Using max width with make the image not pass its width when resizing. Should make image not be pixelated? */
+    max-width: 100%;
+}
+
+#navbar
+{
+    background-color: #000;
+}
+
+/* navbar Unordered list styling */
+#navbar ul
+{
+    /* Clear unordered list defaults */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* If any content goes beyond the page edge, hide the nav bar */
+    overflow: hidden;
+    /* Used for layering. This will ensure that the nav bar appears on top of all elements. */
+    z-index: 100;
+}
+
+/* navbar List Item styling */
+#navbar li
+{
+    float:left;
+}
+
+/* navbar List Item Anchor styling */
+#navbar li a
+{
+    display: inline-block;
+    /* Top & Bottom = 10px, Left & Right = 5px */
+    padding: 10px 5px;
+    /* 
+    * We re-add this here so that the nav bar hyperlinks are not styled the same as other hyperlinks.
+    * Allows us to update other hyperlink styling separately of the navbar.
+    */
+    text-decoration: none;
+    font-size: 1em;
+    color: aliceblue;
+    text-align: center;
+}
+
+/* navbar List Item Anchor hover styling */
+#navbar li a:hover
+{
+    background-color: coral;
+    color: black;
+}
+
+/* myicon class styling */
+.myicon
+{
+    color: aliceblue;
+    font-size: 1.5em;
+    /* 10px all around */
+    padding: 10px;
+    /* Hide icon by default, should only appear when window width is below a threshold. */
+    display: none;
+}
+
+#wrapper
+{
+    max-width: 1180px;
+    position: relative;
+    top: 40px;
+    margin: 0 auto;
+}
+
+/* We have to specify header here because it doesn't have an id. */
+#wrapper header
+{
+    height: 120px;
+    padding: 10px 20px;
+    background-color: #ddd;
+    border-radius: 1em;
+}
+
+/* We do not need to specify that this is in the wrapper because it has an id. */
+#main
+{
+    /* Tells content to be left anchored? */
+    float: left;
+    padding: 5px;
+    width: 38%;
+}
+
+#second
+{
+    float: left;
+    padding: 5px;
+    width: 38%;
+}
+
+#wrapper aside
+{
+    float: left;
+    padding: 5px;
+    width: 20%;
+}
+
+#wrapper footer
+{
+    /* Clears the left and right floats */
+    clear: both;
+    padding: 5px;
+    width: 100%;
+    background-color: dimgray;
+}
+
+/*
+
+
+
+*/
