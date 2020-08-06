@@ -22,6 +22,15 @@ img
 #navbar
 {
     background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    /* Used for layering. This will ensure that the nav bar appears on top of all elements. */
+    z-index: 100;
+    /* If any content goes beyond the page edge, hide the nav bar */
+    overflow: hidden;
 }
 
 /* navbar Unordered list styling */
@@ -31,10 +40,6 @@ img
     list-style-type: none;
     margin: 0;
     padding: 0;
-    /* If any content goes beyond the page edge, hide the nav bar */
-    overflow: hidden;
-    /* Used for layering. This will ensure that the nav bar appears on top of all elements. */
-    z-index: 100;
 }
 
 /* navbar List Item styling */
@@ -48,7 +53,7 @@ img
 {
     display: inline-block;
     /* Top & Bottom = 10px, Left & Right = 5px */
-    padding: 10px 5px;
+    padding: 15px;
     /* 
     * We re-add this here so that the nav bar hyperlinks are not styled the same as other hyperlinks.
     * Allows us to update other hyperlink styling separately of the navbar.
@@ -75,10 +80,18 @@ img
     padding: 10px;
     /* Hide icon by default, should only appear when window width is below a threshold. */
     display: none;
+    text-align: right;
+}
+
+.sm-screen
+{
+    display: block;
 }
 
 #wrapper
 {
+    background-color: white;
+    padding: 2%;
     max-width: 1180px;
     position: relative;
     top: 40px;
@@ -121,9 +134,120 @@ img
 {
     /* Clears the left and right floats */
     clear: both;
+    width: 96%;
+    background-color: #ddd;
+    text-align: center;
+    height: 150px;
+    padding: 25px;
+}
+
+/* Anything in the following media query will override above settings when the screen
+*  is less than 820 pixels.
+*/
+@media screen and (max-width: 820px)
+{
+    #wrapper
+    {
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    #wrapper header
+    {
+        padding: 0;
+        border-radius: 0;
+    }
+    
+    #main
+    {
+        padding: 3%;
+        width: 44%;
+    }
+
+    #second
+    {
+        float: right;
+        padding: 3%;
+        width: 44%;
+    }
+
+    #wrapper aside
+    {
+        clear: both;
+        padding: 5%;
+        width: 90%;
+    }
+    #wrapper footer
+    {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Anything in the following media query will override above settings when the screen
+*  is less than 635 pixels.
+*/
+@media screen and (max-width: 635px)
+{
+    #wrapper
+    {
+        /* Auto centers */
+        width: auto;
+    }
+    
+    #wrapper header
+{
+    height: auto;
+    padding: 0;
+}
+    
+    #main
+    {
+        width: auto;
+        float: none;
+        margin: 0px;
+    }
+
+    #second
+    {
+        width: auto;
+        float: none;
+        margin: 0px;
+    }
+
+    #wrapper aside
+    {
+        padding: 0;
+        width: auto;
+    }
+    #wrapper footer
+    {
+        width: auto;
+    }
+    
+.sm-screen
+{
+    display: none;
+}
+
+#navbar li
+{
+    float: none;
+    display: block;
+}
+
+/* navbar List Item Anchor styling */
+#navbar li a
+{
     padding: 5px;
+    text-align: left;
     width: 100%;
-    background-color: dimgray;
+}
+    
+    .myicon
+{
+    display: block;
+}
 }
 
 /*
